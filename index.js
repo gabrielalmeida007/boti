@@ -3144,7 +3144,7 @@ break
 						reply('Só uma foto mano')
 					}
 					break
-				case 'sticket':
+				case 'sticker':
 				case 'fig':
 				case 'f':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
@@ -4054,7 +4054,13 @@ break
 				kill.reply(from, 'Desculpe, não achei sua música...', id)
 			}
 			break
-			
+        case 'fttp':
+                   
+			     	if (args.length < 1) return reply(`_Coloque o texto _\n\n*Exemplo ${prefix}stc atari*`)
+                                url = encodeURI(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
+		    		attp2 = await getBuffer(url)
+			    	client.sendMessage(from, attp2, sticker, {quoted: mek})
+			     	break
 		
         case 'detector':
 			await kill.reply(from, 'Calculando foto dos participantes do grupo...', id)
